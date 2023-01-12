@@ -10,7 +10,6 @@ tags: ["astro", "blogging", "learning in public"]
 ---
 # My First Blog Post
 
-Published on: 2022-07-01
 
 Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
 
@@ -25,3 +24,7 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 ## What's next
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+
+```js
+console.log('welcome to my blog')
+```
