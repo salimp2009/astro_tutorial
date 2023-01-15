@@ -17,6 +17,10 @@ const operatingSystem = "Linux";
 const quantity = 3;
 const footwear = "boots";
 const student = false;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textTransform = "uppercase";
 ---
 
 <html lang="en">
@@ -26,13 +30,20 @@ const student = false;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
-    <style>
+    <style define:vars={{ skillColor, fontWeight, textTransform }}>
       h1 {
         color: purple;
         font-size: 3rem;
       }
       .skill {
-        color: green;
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        font-style: italic;
+        text-transform: var(--textTransform);
+      }
+      .facts {
+        /* JS comment syntax is also valid */
+        color: yellowgreen;
         font-weight: bold;
       }
     </style>
@@ -46,10 +57,12 @@ const student = false;
     <h2>... and my new Astro site!</h2>
 
     <p>
-      I am working through Astro's introductory tutorial. This is the second
-      page on my website, and it's the first one I built myself!
+      I am working through Astro's introductory tutorial. <br /> This is the second
+      page on my website, and <strong>
+        it's the first one I built myself!
+      </strong>
     </p>
-    <p>Here are a few facts about me:</p>
+    <p class="facts">Here are a few facts about me:</p>
     <ul>
       <li>My name is {identity.firstName}.</li>
       <li>
