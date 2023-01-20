@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 ---
 
 <html lang="en">
@@ -12,9 +12,10 @@ import Footer from "../components/Footer.astro";
     <title>Blog</title>
   </head>
   <body>
-    <Navigation />
+    <Header />
 
     <h1>Blog</h1>
+    <Footer />
     <h2>This is my Blog about programmig & misc!</h2>
 
     <p>
@@ -27,6 +28,6 @@ import Footer from "../components/Footer.astro";
       <li><a href="/posts/post-2/">Post 2</a></li>
       <li><a href="/posts/post-3/">Post 3</a></li>
     </ul>
-    <Footer />
+    <!-- <Footer /> -->
   </body>
 </html>
