@@ -31,7 +31,6 @@ h1 {
 }
 
 .hamburger,
-/* .hamburger:focus, */
 .line {
   display: block;
   width: 40px;
@@ -80,5 +79,8 @@ a:focus {
   .nav-links a {
     display: inline-block;
     padding: 15px 20px;
+  }
+  .hamburger {
+    display: none;
   }
 }
