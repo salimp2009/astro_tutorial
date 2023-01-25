@@ -2,35 +2,20 @@
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "My Blog";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Blog</title>
-  </head>
-  <body>
-    <Header />
-
-    <h1>Blog</h1>
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
-    <h2>This is my Blog about programmig & misc!</h2>
-
-    <p>
-      I learned C++, Haskell and now learning Rust and bash scripting I use
-      LunarVim as my favorite editor...Also planning to learn Arch and write
-      about it !
-    </p>
-    <ul>
-      <li><a href="/posts/post-1/">Post 1</a></li>
-      <li><a href="/posts/post-2/">Post 2</a></li>
-      <li><a href="/posts/post-3/">Post 3</a></li>
-    </ul>
-    <!-- <Footer /> -->
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <p>
+    I learned C++, Haskell and now learning Rust and bash scripting I use
+    LunarVim as my favorite editor...Also planning to learn Arch and write about
+    it !
+  </p>
+  <ul>
+    <li><a href="/posts/post-1/">Post 1</a></li>
+    <li><a href="/posts/post-2/">Post 2</a></li>
+    <li><a href="/posts/post-3/">Post 3</a></li>
+  </ul>
+</BaseLayout>
+<!-- <Footer /> -->

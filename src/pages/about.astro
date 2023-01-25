@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About Me";
 const identity = {
@@ -27,93 +28,57 @@ const fontWeight = "bold";
 const textTransform = "uppercase";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-    <style define:vars={{ skillColor, fontWeight, textTransform }}>
-      h1 {
-        color: purple;
-        font-size: 3rem;
-      }
-      .skill {
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        font-style: italic;
-        text-transform: var(--textTransform);
-      }
-      .facts {
-        /* JS comment syntax is also valid */
-        color: yellowgreen;
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-
-    <h1>{pageTitle}</h1>
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
-    <h2>... and my new Astro site!</h2>
-
-    <p>
-      I am working through Astro's introductory tutorial. <br /> This is the second
-      page on my website, and <strong>
-        it's the first one I built myself!
-      </strong>
-    </p>
-    <p class="facts">Here are a few facts about me:</p>
-    <ul>
-      <li>My name is {identity.firstName}.</li>
-      <li>
-        I live in {identity.country} and I work as a {identity.occupation}.
-      </li>
-      {
-        identity.hobbies.length >= 2 && (
-          <li>
-            Two of my hobbies are: {identity.hobbies[0]} and{" "}
-            {identity.hobbies[1]}
-          </li>
-        )
-      }
-    </ul>
-
-    <p>{operatingSystem}</p>
-    {student && <p>I am still in school.</p>}
-    <p>I have {quantity + 8} pairs of {footwear}</p>
+<BaseLayout pageTitle={pageTitle}>
+  <p>
+    I am working through Astro's introductory tutorial. <br /> This is the second
+    page on my website, and <strong> it's the first one I built myself!</strong>
+  </p>
+  <p class="facts">Here are a few facts about me:</p>
+  <ul>
+    <li>My name is {identity.firstName}.</li>
+    <li>
+      I live in {identity.country} and I work as a {identity.occupation}.
+    </li>
     {
-      operatingSystem === "Linux" ? (
-        <p>I am using a Linux.</p>
-      ) : (
-        <p>I am not using a Linux.</p>
+      identity.hobbies.length >= 2 && (
+        <li>
+          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
+        </li>
       )
     }
-    <p>My skills are:</p>
-    <ul>
-      {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
-    <p>
-      This site will update as I complete more of the tutorial, so keep checking
-      back and see how my journey is going!
-    </p>
+  </ul>
 
-    {happy && <p>I am happy to be learning Astro!</p>}
+  <p>{operatingSystem}</p>
+  {student && <p>I am still in school.</p>}
+  <p>I have {quantity + 8} pairs of {footwear}</p>
+  {
+    operatingSystem === "Linux" ? (
+      <p>I am using a Linux.</p>
+    ) : (
+      <p>I am not using a Linux.</p>
+    )
+  }
+  <p>My skills are:</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+  <p>
+    This site will update as I complete more of the tutorial, so keep checking
+    back and see how my journey is going!
+  </p>
 
-    {finished === false && <p>I am not finished this tutorial!</p>}
+  {happy && <p>I am happy to be learning Astro!</p>}
 
-    {
-      goal === 3 ? (
-        <p>My goal is to finish in 3 days.</p>
-      ) : (
-        <p>My goal is not 3 days.</p>
-      )
-    }
-    <!-- <Footer /> -->
-  </body>
-</html>
+  {finished === false && <p>I am not finished this tutorial!</p>}
+
+  {
+    goal === 3 ? (
+      <p>My goal is to finish in 3 days.</p>
+    ) : (
+      <p>My goal is not 3 days.</p>
+    )
+  }
+</BaseLayout>
+<h2>... and my new Astro site!</h2>
+
+<!-- <Footer /> -->
