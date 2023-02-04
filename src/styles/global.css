@@ -1,8 +1,8 @@
 html {
   /* background-color: #f1f5f9; */
 
-  background-color: #74992e;
-
+  background-color: #100f0e;
+  color: white;
   font-family: sans-serif;
 }
 
@@ -60,9 +60,8 @@ h1 {
 
 .nav-links a:hover,
 a:focus {
-  background-color: #ff9776;
+  background-color: #000000;
 }
-
 .expanded {
   display: unset;
 }
@@ -78,6 +77,7 @@ a:focus {
 
   .nav-links a {
     display: inline-block;
+    color: #c1caf4;
     padding: 15px 20px;
   }
 

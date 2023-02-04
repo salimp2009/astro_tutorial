@@ -3,3 +3,12 @@ const { title, url } = Astro.props;
 ---
 
 <li><a href={url}>{title}</a></li>
+
+<style>
+  a {
+    color: #c1caf4;
+  }
+  a:focus {
+    background-color: black;
+  }
+</style>
