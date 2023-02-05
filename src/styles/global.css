@@ -36,14 +36,19 @@ h1 {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background-color: #ff9776;
+  background-color: whitesmoke;
 }
 
+.intro-image {
+  justify-content: right;
+  width: 200%;
+}
 .nav-links {
   width: 100%;
+  justify-content: center;
   top: 5rem;
-  left: 48px;
-  background-color: #ff9776;
+  /* left: 48px; */
+  /* background-color: #ff9776; */
   display: none;
   margin: 0;
 }
@@ -70,8 +75,9 @@ a:focus {
   .nav-links {
     margin-left: 5em;
     display: block;
-    position: static;
-    width: auto;
+    /* position: static; */
+    justify-content: center;
+    /* width: auto; */
     background: none;
   }
 
