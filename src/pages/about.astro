@@ -10,7 +10,7 @@ const identity = {
   hobbies: ["climbing", "movies", "coffee", "running", "pullups"],
 };
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro"];
 
 const happy = true;
 const finished = false;
@@ -23,15 +23,11 @@ const student = false;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>
-    I am working through Astro's introductory tutorial. <br /> This is the second
-    page on my website, and <strong> it's the first one I built myself!</strong>
-  </p>
   <p class="facts">Here are a few facts about me:</p>
   <ul>
     <li>My name is {identity.firstName}.</li>
     <li>
-      I live in {identity.country} and I work as a {identity.occupation}.
+      I live in {identity.country} and I am self learning {identity.occupation}.
     </li>
     {
       identity.hobbies.length >= 2 && (
@@ -42,34 +38,35 @@ const student = false;
     }
   </ul>
 
-  <p>{operatingSystem}</p>
-  {student && <p>I am still in school.</p>}
-  <p>I have {quantity + 8} pairs of {footwear}</p>
-  {
-    operatingSystem === "Linux" ? (
-      <p>I am using a Linux.</p>
-    ) : (
-      <p>I am not using a Linux.</p>
-    )
-  }
-  <p>My skills are:</p>
+  <!-- <p>{operatingSystem}</p> -->
+  <!-- {student && <p>I am still in school.</p>} -->
+  <!-- <p>I have {quantity + 8} pairs of {footwear}</p> -->
+  <!-- { -->
+  <!--   operatingSystem === "Linux" ? ( -->
+  <!--     <p>I am using a Linux.</p> -->
+  <!--   ) : ( -->
+  <!--     <p>I am not using a Linux.</p> -->
+  <!--   ) -->
+  <!-- } -->
+  <p>I am learning this year;</p>
   <ul>
     {skills.map((skill) => <li class="skill">{skill}</li>)}
   </ul>
   <p>
-    This site will update as I complete more of the tutorial, so keep checking
-    back and see how my journey is going!
+    <!--   This site will update as I complete more of the tutorial, so keep checking -->
+    <!--   back and see how my journey is going! -->
+    <!-- </p> -->
+
+    <!-- {happy && <p>I am happy to be learning Astro!</p>} -->
+
+    <!-- {finished === false && <p>I am not finished this tutorial!</p>} -->
+
+    <!-- { -->
+    <!--   goal === 3 ? ( -->
+    <!--     <p>My goal is to finish in 3 days.</p> -->
+    <!--   ) : ( -->
+    <!--     <p>My goal is not 3 days.</p> -->
+    <!--   ) -->
+    <!-- } -->
   </p>
-
-  {happy && <p>I am happy to be learning Astro!</p>}
-
-  {finished === false && <p>I am not finished this tutorial!</p>}
-
-  {
-    goal === 3 ? (
-      <p>My goal is to finish in 3 days.</p>
-    ) : (
-      <p>My goal is not 3 days.</p>
-    )
-  }
 </BaseLayout>
