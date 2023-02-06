@@ -1,17 +1,32 @@
 ---
 const { platform, username } = Astro.props;
+import { Icon } from "astro-icon";
 ---
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a href={`https://www.${platform}.com/${username}`}>
+  <Icon name={`mdi:${platform}`} />
+</a>
 
 <style>
   a {
     padding: 0.2rem 1rem;
+    /* color: #c1caf4; */
+    /* background-color: #4c1d95; */
+    /* text-decoration: none; */
+    /* border-radius: 8px; */
+    /* border-style: solid; */
+    /* border-color: black; */
+  }
+  [astro-icon] {
     color: #c1caf4;
-    background-color: #4c1d95;
-    text-decoration: none;
-    border-radius: 8px;
-    border-style: solid;
-    border-color: black;
+    /* OR */
+    /* fill: blue; */
+    width: 3rem;
+  }
+  [astro-icon]:hover {
+    color: #4c1d95;
+    /* OR */
+    /* fill: blue; */
+    width: 3rem;
   }
 </style>

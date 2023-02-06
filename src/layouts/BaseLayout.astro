@@ -13,13 +13,41 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
+  <div class=`intro reverse`>
+    <img
+      class="intro2_image"
+      id="myHeading"
+      src="/assets/salim_image.jpg"
+      alt="me"
+    />
+  </div>
+  <Header />
   <body>
-    <Header />
-    <h1>{pageTitle}</h1>
     <Footer />
+    <h1>
+      {pageTitle}
+    </h1>
     <slot />
     <script>
       import "../scripts/menu.js";
     </script>
   </body>
+
+  <style lang="css">
+    .intro2_image {
+      align-self: flex-start;
+      margin-top: 2rem;
+      border-radius: 50%;
+      width: 5rem;
+      border-radius: 9999px;
+    }
+    .intro-image {
+      width: 7rem;
+    }
+    .reverse {
+      flex-direction: row-reverse;
+    }
+  </style>
+
+
 </html>
