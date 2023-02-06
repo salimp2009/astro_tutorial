@@ -1,14 +1,40 @@
 ---
+import BlogPost from "../components/BlogPost.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+const allPosts = await Astro.glob("../pages/posts/*.md");
 const pageTitle = "Salim Pamukcu";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div>
-    <p>
-      I am self learner programmer C++, Rust, Haskell
-      <br />Currently learning some web dev, Rust, linux, Arch..anything fun
-      <br />Love neovim and currently working with LunarVim
-    </p><br />
+  <div class="intro">
+    <div>
+      <p>
+        I am self learner programmer C++, Rust, Haskell
+        <br />Currently learning some web dev, Rust, linux, Arch..anything fun
+        <br />Love neovim and currently working with LunarVim
+      </p>
+    </div>
   </div>
+  <h2>Posts</h2>
+  <ul>
+    {
+      allPosts.map((post) => (
+        <BlogPost
+          url={post.url}
+          title={post.frontmatter.title}
+          date={post.frontmatter.pubDate.slice(0, 10)}
+        />
+      ))
+    }
+  </ul>
 </BaseLayout>
+
+<style lang="css">
+  .intro {
+    display: flex;
+  }
+
+  .intro p {
+    color: #aaa;
+  }
+</style>
