@@ -20,28 +20,47 @@ let dateString = newdate.toLocaleDateString("en-US", {
 </li>
 
 <style>
+  li {
+    list-style: none;
+    text-decoration: none;
+  }
+
   a {
     color: #c1caf4;
+    text-decoration: none;
   }
-  a:focus {
-    background-color: black;
+
+  a:hover {
+    background-color: red;
   }
+
+  .container {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    border-bottom: 1px solid #333;
+  }
+
+  li:hover .container {
+    color: #fff;
+    transform: scale(1.01);
+    transition: transform 0.3s ease-in-out;
+  }
+
   .pubDate {
     color: #aaa;
     font-size: 1rem;
     font-weight: 400;
     margin-right: 0.8em;
   }
+
   .readmore {
     color: #aaa;
     /* text-align: right; */
     font-size: 1rem;
     font-weight: 400;
     margin-left: auto;
-  }
-  .container {
-    display: flex;
-    /* align-items: center; */
-    /* justify-content: space-between; */
   }
 </style>
