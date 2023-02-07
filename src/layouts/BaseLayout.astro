@@ -3,7 +3,14 @@ import Header from "../components/Header.astro";
 import Social from "../components/Social.astro";
 import SocialList from "../components/SocialList.astro";
 import "../styles/global.css";
-const { pageTitle } = Astro.props;
+const { pageTitle, message, showImage } = Astro.props;
+
+let imageClass = "hidden-image";
+let reverse = "";
+if (showImage) {
+  reverse = "reverse";
+  imageClass = "intro2_image";
+}
 ---
 
 <html lang="en">
@@ -14,42 +21,71 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-
-  <div class=`intro reverse`>
-    <img
-      class="intro2_image"
-      id="myHeading"
-      src="/assets/salim_image.jpg"
-      alt="me"
-    />
-  </div>
-  <Header />
-  <body>
+  <body class="layout">
+    <Header />
+    <div class=`intro ${reverse}`>
+      <div>
+        <h1>
+          {pageTitle}
+          <img class={imageClass} src="/assets/salim_image.jpg" alt="me" />
+          <p>
+            {message}
+          </p>
+        </h1>
+      </div>
+    </div>
     <SocialList />
-    <h1>
-      {pageTitle}
-    </h1>
     <slot />
     <script>
       import "../scripts/menu.js";
     </script>
   </body>
+</html>
 
-  <style lang="css">
-    .intro2_image {
-      align-self: flex-start;
-      margin-top: 2rem;
-      border-radius: 50%;
-      width: 5rem;
-      border-radius: 9999px;
+<style>
+  .intro {
+    display: flex;
+    flex-direction: column;
+  }
+  .intro p {
+    padding-top: 0.625rem;
+    color: #71717a;
+    padding-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .hidden-image {
+    display: none;
+  }
+
+  .intro2_image {
+    align-self: flex-start;
+    margin-top: 2rem;
+    margin-left: 5rem;
+    border-radius: 50%;
+    width: 5rem;
+    border-radius: 9999px;
+  }
+  /* Small Devices, Tablets */
+  @media only screen and (min-width: 768px) {
+    .intro {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
-    .intro2-image {
+    .intro2_image {
       width: 7rem;
     }
-    .reverse {
-      flex-direction: row-reverse;
+    /* .reverse { */
+    /*   flex-direction: row-reverse; */
+    /* } */
+  }
+  @media only screen and (min-width: 992px) {
+    .intro2_image {
+      width: 10rem;
+      margin-left: 4rem;
     }
-  </style>
-
-
-</html>
+  }
+</style>

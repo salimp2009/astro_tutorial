@@ -15,7 +15,7 @@ body {
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 h1 {
@@ -41,17 +41,17 @@ h1 {
 
 .nav-links {
   width: 100%;
-  justify-content: center;
-  top: 5rem;
+  /* justify-content: center; */
+  /* top: 5rem; */
   /* left: 48px; */
-  /* background-color: #ff9776; */
-  display: none;
-  margin: 0;
+  background-color: #222;
+  /* display: none; */
+  /* margin: 0; */
 }
 
 .nav-links a {
-  display: block;
-  text-align: center;
+  /* display: block; */
+  /* text-align: center; */
   padding: 10px 0;
   text-decoration: none;
   font-size: 1.2rem;
@@ -61,7 +61,8 @@ h1 {
 
 .nav-links a:hover,
 a:focus {
-  background-color: #000000;
+  background-color: #222;
+  border-radius: 1rem;
 }
 .expanded {
   display: unset;
@@ -79,7 +80,7 @@ a:focus {
 
   .nav-links a {
     display: inline-block;
-    color: #c1caf4;
+    color: #fff;
     padding: 15px 20px;
   }
 

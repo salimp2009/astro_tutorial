@@ -3,7 +3,11 @@ const { platform, username } = Astro.props;
 import { Icon } from "astro-icon";
 ---
 
-<a href={`https://www.${platform}.com/${username}`}>
+<a
+  href={`https://www.${platform}.com/${username}`}
+  target="_blank"
+  rel="nofollow noopener noreferrer"
+>
   <Icon name={`mdi:${platform}`} />
 </a>
 
