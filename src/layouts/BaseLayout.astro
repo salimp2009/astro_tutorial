@@ -9,7 +9,7 @@ let imageClass = "hidden-image";
 let reverse = "";
 if (showImage) {
   reverse = "reverse";
-  imageClass = "intro2_image";
+  imageClass = "intro-image";
 }
 ---
 
@@ -58,7 +58,7 @@ if (showImage) {
     display: none;
   }
 
-  .intro2_image {
+  .intro-image {
     align-self: flex-start;
     margin-top: 2rem;
     margin-left: 5rem;
@@ -75,15 +75,15 @@ if (showImage) {
       flex-direction: row;
       align-items: center;
     }
-    .intro2_image {
+    .intro-image {
       width: 7rem;
     }
-    /* .reverse { */
-    /*   flex-direction: row-reverse; */
-    /* } */
+    .reverse {
+      flex-direction: row-reverse;
+    }
   }
   @media only screen and (min-width: 992px) {
-    .intro2_image {
+    .intro-image {
       width: 10rem;
       margin-left: 4rem;
     }

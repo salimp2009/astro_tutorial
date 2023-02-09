@@ -13,7 +13,19 @@ const message =
   <BlogPosts />
 
   <h2>Videos</h2>
-  <YouTube id="https://www.youtube.com/watch?v=6OSDh8BS5Nk" />
+  <div class="video yt-video">
+    <YouTube id="https://www.youtube.com/watch?v=6OSDh8BS5Nk" />
+  </div>
 </BaseLayout>
 
-<style lang="css"></style>
+<style lang="css">
+  .video lite-youtube {
+    /* center */
+    margin-inline: auto; /* full width */
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16/9;
+    height: auto;
+    padding-top: 1rem;
+  }
+</style>

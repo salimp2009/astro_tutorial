@@ -25,27 +25,27 @@ h1 {
 
 /* nav styles */
 
-.hamburger {
-  padding-right: 20px;
-  cursor: pointer;
-}
+/* .hamburger { */
+/*   padding-right: 20px; */
+/*   cursor: pointer; */
+/* } */
 
-.hamburger,
-.line {
-  display: block;
-  width: 40px;
-  height: 5px;
-  margin-bottom: 10px;
-  background-color: whitesmoke;
-}
+/* .hamburger, */
+/* .line { */
+/*   display: block; */
+/*   width: 40px; */
+/*   height: 5px; */
+/*   margin-bottom: 10px; */
+/*   background-color: whitesmoke; */
+/* } */
 
 .nav-links {
-  width: 100%;
+  /* width: 100%; */
   /* justify-content: center; */
   /* top: 5rem; */
   /* left: 48px; */
-  background-color: #222;
-  /* display: none; */
+  /* background-color: #222; */
+  display: none;
   /* margin: 0; */
 }
 
@@ -53,22 +53,21 @@ h1 {
   /* display: block; */
   /* text-align: left; */
   /* padding: 0px 0; */
+  color: #f9fafb;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.nav-links a:hover,
-a:focus {
-  background-color: #222;
-  border-radius: 1rem;
-}
 .expanded {
-  display: unset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@media screen and (min-width: 636px) {
+@media only screen and (min-width: 768px) {
   .nav-links {
     margin-left: 5em;
     display: block;
@@ -76,6 +75,13 @@ a:focus {
     justify-content: center;
     width: auto;
     background: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .nav-links a {
@@ -88,8 +94,8 @@ a:focus {
     background-color: #27272a;
     border-radius: 0.8rem;
   }
+}
 
-  .hamburger {
-    display: none;
-  }
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
 }

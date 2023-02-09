@@ -10,57 +10,72 @@ let dateString = newdate.toLocaleDateString("en-US", {
 ---
 
 <li>
-  <a href={url}>
-    <div class="container">
-      <span class="index">0{index + 1}</span>
-      <span class="title">{title}</span>
-      <span class="pubDate">{dateString}</span>
+  <a class="container" href={url}>
+    <span class="index">0{index + 1}</span>
+    <div class="postinfocontainer">
+      <div>{title}</div>
+      <div class="pubDate">{dateString}</div>
     </div>
   </a>
 </li>
 
 <style>
   li {
+    font-size: 1.2rem;
     list-style: none;
+    border-bottom: 1px solid #3f3f46;
     text-decoration: none;
   }
-
-  .title {
-    margin-left: 1rem;
-  }
-
-  a {
-    color: #c1caf4;
-    text-decoration: none;
-  }
-
   .container {
     display: flex;
-    align-items: center;
-    /* justify-content: space-between; */
-    padding-bottom: 1rem;
+    flex-direction: row;
+    align-items: flex-start;
+    color: #e5e7eb;
+    text-decoration: none;
     padding-top: 1rem;
-    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+  }
+
+  .postinfocontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   li:hover .container {
-    color: #fff;
     transform: scale(1.01);
     transition: transform 0.3s ease-in-out;
   }
 
-  /* .pubDate { */
-  /*   color: #aaa; */
-  /*   font-size: 1rem; */
-  /*   font-weight: 400; */
-  /*   margin-right: 0.8em; */
-  /* } */
+  .index {
+    color: #71717a;
+    margin-right: 1rem;
+  }
 
   .pubDate {
-    color: #aaa;
-    /* text-align: right; */
+    color: #71717a;
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding-top: 0.2rem;
+  }
+
+  .readmore {
+    color: #71717a;
     font-size: 1rem;
     font-weight: 400;
     margin-left: auto;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .container {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    .postinfocontainer {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 </style>
