@@ -1,13 +1,10 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+// import "../styles/markdown.css";
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <!-- <p>{frontmatter.pubDate.slice(0, 10)}</p> -->
-  <!-- <p><em>{frontmatter.description}</em></p> -->
-  <!-- <p>Written by: {frontmatter.author}</p> -->
-  <img src={frontmatter.postImage} width="300" />
   <div class="tags">
     {
       frontmatter.tags.map((tag) => (
@@ -17,7 +14,9 @@ const { frontmatter } = Astro.props;
       ))
     }
   </div>
-  <slot />
+  <div class="markdown-body">
+    <slot />
+  </div>
 </BaseLayout>
 
 <style>
