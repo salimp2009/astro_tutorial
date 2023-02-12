@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon";
 ---
 
 <div class="nav-links">
@@ -11,9 +12,12 @@
   <div class="nav-link">
     <a href="/tags/">Tags</a>
   </div>
+  <div class="nav-rss">
+    <Icon name="mdi:rss-box" />
+  </div>
 </div>
 
-<style>
+<style lang="css">
   .nav-links {
     /* width: 100%; */
     /* justify-content: center; */
@@ -33,6 +37,7 @@
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
+    /* padding: 0.875rem; */
   }
 
   .expanded {
@@ -42,23 +47,51 @@
     justify-content: space-between;
   }
 
+  .nav-link {
+    padding: 1rem;
+  }
+  .nav-links .nav-rss {
+    display: none;
+  }
+
+  [astro-icon] {
+    color: #c1caf4;
+    /* OR */
+    /* fill: blue; */
+    width: 3rem;
+  }
+
+  [astro-icon]:hover {
+    transform: scale(1.1);
+  }
+
+  [astro-icon="mdi:rss-box"]:hover {
+    color: #ffa500;
+  }
+
   @media only screen and (min-width: 768px) {
     .nav-links {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
+      margin-top: 1.5rem;
     }
-
-    .nav-links a {
-      display: inline-block;
-      color: #fff;
-      padding: 18px 9px;
+    .nav-link {
+      padding: 0.5rem;
+      padding-top: 0.625rem;
+      padding-bottom: 0.625rem;
     }
 
     .nav-links .nav-link:hover {
       background-color: #27272a;
       border-radius: 0.8rem;
+    }
+    .nav-links .nav-rss {
+      margin-left: 5rem;
+    }
+    .nav-links .nav-rss {
+      display: block;
     }
   }
 
