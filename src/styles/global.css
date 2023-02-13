@@ -19,14 +19,6 @@ html {
   }
 }
 
-/* body { */
-/*   margin: 0 auto; */
-/*   width: 100%; */
-/*   max-width: 80ch; */
-/*   padding: 1rem; */
-/*   line-height: 1.5; */
-/* } */
-
 *,
 *::after,
 *::before {
@@ -35,17 +27,17 @@ html {
 
 /* Chrome, Safari, Edge, Opera
 */
-/* input::-webkit-outer-spin-button, */
-/* input::-webkit-inner-spin-button { */
-/*   -webkit-appearance: none; */
-/*   margin: 0; */
-/* } */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 /* Firefox */
-/* input[type="number"] { */
-/*   -moz-appearance: textfield; */
-/*   appearance: inherit; */
-/* } */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: inherit;
+}
 
 blockquote,
 body,
