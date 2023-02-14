@@ -7,37 +7,65 @@ import { Icon } from "astro-icon";
     <a href="/">Home</a>
   </div>
   <div class="nav-link">
-    <a href="/blog/">Blog</a>
+    <a href="/blog/1">Blog</a>
   </div>
+  <!-- <div class="nav-link"> -->
+  <!--   <a href="/tags/">Tags</a> -->
+  <!-- </div> -->
   <div class="nav-link">
-    <a href="/tags/">Tags</a>
-  </div>
-  <div class="nav-rss">
+    <a class="donate-link" href="/donate">Donate</a>
+  </div><div class="nav-rss">
     <Icon name="mdi:rss-box" />
   </div>
 </div>
 
 <style lang="css">
-  .nav-links {
-    /* width: 100%; */
-    /* justify-content: center; */
-    /* top: 5rem; */
-    /* left: 48px; */
-    /* background-color: #222; */
+  p {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  .connect-button,
+  .tip-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    /* background-color: #4caf50; */
+    background-color: #fde047;
+    border: none;
+    color: #111;
+    padding: 0.5rem 1rem;
+    border-radius: 0.8rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .tip-button {
     display: none;
-    /* margin: 0; */
+  }
+  .tip-enabled {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+  .connect-button:hover {
+    /* background-color: #45a049; */
+    background-color: #facc15;
+  }
+  .tip-button:hover {
+    /* background-color: #45a049; */
+    background-color: #eab308;
   }
 
-  .nav-links a {
-    /* display: block; */
-    /* text-align: left; */
-    /* padding: 0px 0; */
-    color: #f9fafb;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    /* padding: 0.875rem; */
+  .nav-links {
+    display: none;
+  }
+
+  .hidden {
+    display: none;
   }
 
   .expanded {
@@ -47,17 +75,39 @@ import { Icon } from "astro-icon";
     justify-content: space-between;
   }
 
-  .nav-link {
-    padding: 1rem;
+  .nav-links a {
+    color: #f9fafb;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* padding: 0.875rem; */
   }
+
   .nav-links .nav-rss {
     display: none;
   }
 
+  .nav-link .donate-link {
+    color: #facc15;
+    /* color: #22c55e; */
+    font-weight: bold;
+  }
+
+  .nav-link {
+    padding: 1rem;
+  }
+
+  [astro-icon="mdi:close"] {
+    color: #c1c1c1;
+    padding: 0.1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+
   [astro-icon] {
     color: #c1caf4;
-    /* OR */
-    /* fill: blue; */
     width: 3rem;
   }
 
@@ -66,7 +116,8 @@ import { Icon } from "astro-icon";
   }
 
   [astro-icon="mdi:rss-box"]:hover {
-    color: #ffa500;
+    color: #22c55e;
+    /* color: #ffa500; */
   }
 
   @media only screen and (min-width: 768px) {
@@ -75,12 +126,12 @@ import { Icon } from "astro-icon";
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
-      margin-top: 1.5rem;
+      /* margin-top: 1.5rem; */
     }
     .nav-link {
       padding: 0.5rem;
-      padding-top: 0.625rem;
-      padding-bottom: 0.625rem;
+      padding-top: 0.225rem;
+      padding-bottom: 0.225rem;
     }
 
     .nav-links .nav-link:hover {
@@ -88,13 +139,43 @@ import { Icon } from "astro-icon";
       border-radius: 0.8rem;
     }
     .nav-links .nav-rss {
-      margin-left: 5rem;
+      margin-left: auto;
     }
     .nav-links .nav-rss {
       display: block;
     }
   }
 
+  textarea:focus,
+  input:focus {
+    outline: none !important;
+    border: 1px solid #60a5fa;
+    /* box-shadow: 0 0 10px #719ECE; */
+  }
+  .popup input {
+    color: #fff;
+    background-color: #272727;
+    padding: 0.5rem;
+    width: 70%;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-radius: 0.4rem;
+  }
+  .popup button {
+    width: 50%;
+    border-radius: 0.8rem;
+    background-color: #fde047;
+    color: #111;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .popup button:hover {
+    background-color: #facc15;
+  }
   /* Medium Devices, Desktops */
   @media only screen and (min-width: 992px) {
   }

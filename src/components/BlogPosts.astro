@@ -7,7 +7,7 @@ const posts = paginate ? page.data : allPosts.slice(-count).reverse();
 
 <ul>
   {
-    allPosts.map((post, index) => (
+    posts.map((post, index) => (
       <BlogPost
         index={index}
         url={post.url}
@@ -17,9 +17,3 @@ const posts = paginate ? page.data : allPosts.slice(-count).reverse();
     ))
   }
 </ul>
-
-<style>
-  ul {
-    padding-left: 0;
-  }
-</style>

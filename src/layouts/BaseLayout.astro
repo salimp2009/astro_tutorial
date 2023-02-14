@@ -1,7 +1,5 @@
 ---
 import Header from "../components/Header.astro";
-// import Social from "../components/Social.astro";
-import SocialList from "../components/SocialList.astro";
 import "../styles/global.css";
 const { pageTitle, message, showImage } = Astro.props;
 
@@ -23,18 +21,18 @@ if (showImage) {
   </head>
   <body class="layout">
     <Header />
-    <div class=`intro ${reverse}`>
-      <div>
-        <h1>
-          {pageTitle}
-          <img class={imageClass} src="/assets/salim_image.jpg" alt="me" />
-          <p>
-            {message}
-          </p>
-        </h1>
-      </div>
-    </div>
-    <SocialList />
+    <!-- <div class=`intro ${reverse}`> -->
+    <!--   <div> -->
+    <!--     <h1> -->
+    <!--       {pageTitle} -->
+    <!--       <img class={imageClass} src="/assets/salim_image.jpg" alt="me" /> -->
+    <!--       <p> -->
+    <!--         {message} -->
+    <!--       </p> -->
+    <!--     </h1> -->
+    <!--   </div> -->
+    <!-- </div> -->
+    <!-- <SocialList /> -->
     <slot />
     <script>
       import "../scripts/menu.js";
@@ -43,15 +41,11 @@ if (showImage) {
 </html>
 
 <style>
-  layout {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-  }
   .intro {
     display: flex;
     flex-direction: column;
   }
+
   .intro p {
     padding-top: 0.625rem;
     color: #71717a;
@@ -66,11 +60,11 @@ if (showImage) {
   .intro-image {
     align-self: flex-start;
     margin-top: 2rem;
-    margin-left: 5rem;
     border-radius: 50%;
     width: 5rem;
     border-radius: 9999px;
   }
+
   /* Small Devices, Tablets */
   @media only screen and (min-width: 768px) {
     .intro {
@@ -80,17 +74,20 @@ if (showImage) {
       flex-direction: row;
       align-items: center;
     }
+
     .intro-image {
-      width: 9rem;
+      width: 7rem;
     }
+
     .reverse {
       flex-direction: row-reverse;
     }
   }
+
   @media only screen and (min-width: 992px) {
     .intro-image {
       width: 10rem;
-      /* margin-left: 4rem; */
+      margin-left: 4rem;
     }
   }
 </style>

@@ -1,23 +1,86 @@
 ---
+import SocialList from "../components/SocialList.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPosts from "../components/BlogPosts.astro";
 import { YouTube } from "@astro-community/astro-embed-youtube";
-const pageTitle = "Salim Pamukcu";
-
+const response = await fetch(
+  "https://owen-wilson-wow-api.onrender.com/wows/random"
+);
+const data = await response.json();
 const message =
-  "I am a self learner programmer C++, Rust, Haskell. Now learning Astro, linux, Arch..anything fun";
+  "I am a self learner programmer C++, Rust, Haskell. Now learning Astro, linux, Arch. Big fan of neovim, 🌙 LunarVim and ⚡ Zap, linux";
 ---
 
-<BaseLayout pageTitle={pageTitle} message={message} showImage="true">
-  <h2>Posts</h2>
-  <BlogPosts />
-  <h2>Videos</h2>
+<BaseLayout>
+  <div class=`intro reverse`>
+    <img
+      class="intro-image"
+      id="myHeading"
+      src="/assets/salim_image.jpg"
+      alt="me"
+    />
+    <div>
+      <h1>Salim Pamukcu</h1>
+      <p>
+        I am a self learner programmer C++, Rust, Haskell.<br /> Now learning Astro,
+        linux, Arch..anything fun. <!-- <br /> -->
+        Big fan of neovim, 🌙
+        <a
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          href="https://www.lunarvim.org">LunarVim</a
+        >
+        and ⚡<a
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          href="https://www.zapzsh.org">Zap</a
+        > , linux";
+      </p>
+    </div>
+  </div>
+  <SocialList />
+
+  <h2>Latest Posts</h2>
+  <BlogPosts count={4} />
+
+  <div class="readmore">
+    <a href="/blog/1">All Posts →</a>
+  </div>
+
+  <audio id="myAudio">
+    <source src={data[0].audio} type="audio/mpeg" />
+  </audio>
+
+  <h2>Latest Video</h2>
+
   <div class="video yt-video">
     <YouTube id="https://www.youtube.com/watch?v=6OSDh8BS5Nk" />
   </div>
+
+  <script>
+    import "../scripts/sound.js";
+  </script>
 </BaseLayout>
 
 <style>
+  p a {
+    color: #3b82f6;
+    text-decoration: none;
+  }
+  p a:hover {
+    text-decoration: underline;
+  }
+  .readmore {
+    padding: 1rem 0;
+  }
+  .readmore a {
+    color: #71717a;
+    font-size: 1.1rem;
+    text-decoration: none;
+  }
+  .readmore a:hover {
+    text-decoration: underline;
+  }
   .video lite-youtube {
     /* center */
     margin-inline: auto; /* full width */
@@ -26,6 +89,47 @@ const message =
     aspect-ratio: 16/9;
     height: auto;
     padding-top: 1rem;
-    margin: 0Q;
+  }
+  .intro {
+    display: flex;
+    flex-direction: column;
+  }
+  .intro p {
+    padding-top: 0.625rem;
+    color: #71717a;
+    padding-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  .hidden-image {
+    display: none;
+  }
+  .intro-image {
+    align-self: flex-start;
+    margin-top: 2rem;
+    border-radius: 50%;
+    width: 5rem;
+    border-radius: 9999px;
+  }
+  /* Small Devices, Tablets */
+  @media only screen and (min-width: 768px) {
+    .intro {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .intro-image {
+      width: 7rem;
+    }
+    .reverse {
+      flex-direction: row-reverse;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    .intro-image {
+      width: 10rem;
+      margin-left: 4rem;
+    }
   }
 </style>

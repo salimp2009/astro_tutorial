@@ -5,39 +5,26 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <div class="tags">
-    {
-      frontmatter.tags.map((tag) => (
-        <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
-        </p>
-      ))
-    }
-  </div>
+  <h1>{frontmatter.title}</h1>
+  <p class="date">{frontmatter.pubDate.slice(0, 10)}</p>
+
+  <!-- <img src={frontmatter.postImage} width="300" alt={frontmatter.image.alt} /> -->
+
   <div class="markdown-body">
     <slot />
   </div>
 </BaseLayout>
 
 <style>
-  a {
-    color: #c1caf4;
-    /* background-color: black; */
-    text-decoration: none;
+  h1 {
+    padding-top: 2rem;
+    /* padding-bottom: 2rem; */
   }
 
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-  }
-
-  .tag {
-    margin: 0.25em;
-    border: solid 1px #a1a1a1;
-    border-radius: 0.5em;
-    padding: 0.5em 1em;
-    font-size: 1.15em;
-    /* background-color: #f8fcfd; */
+  .date {
+    margin-top: -0.25rem;
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    color: #666;
   }
 </style>
