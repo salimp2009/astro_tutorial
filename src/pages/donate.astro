@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import DonationLink from "../components/DonationLink.astro";
+---
+
+<BaseLayout>
+  <h1>Donate</h1>
+  <p>
+    If you have found my posts usefull, please consider making a donation. Your
+    support is greatly appreciated and helps me to continue making more content.
+  </p>
+
+  <div class="donation-links">
+    <DonationLink
+      link={"https://github.com/sponsors/salimp2009"}
+      icon={"mdi:github"}
+      name={"GH Sponsors"}
+    />
+    <DonationLink
+      link={"https://account.venmo.com/"}
+      icon={"mdi:venmo"}
+      name={"Venmo"}
+    />
+    <DonationLink
+      link={"https://cash.app/"}
+      icon={"simple-icons:cashapp"}
+      name={"CashApp"}
+    />
+    <DonationLink
+      link={"https://www.patreon.com/"}
+      icon={"mdi:patreon"}
+      name={"Patreon"}
+    />
+    <DonationLink
+      link={"https://ko-fi.com/"}
+      icon={"simple-icons:kofi"}
+      name={"Ko-fi"}
+    />
+    <DonationLink
+      link={"https://www.buymeacoffee.com/"}
+      icon={"simple-icons:buymeacoffee"}
+      name={"BuyMeACoffee"}
+    />
+    <DonationLink
+      link={"https://strike.me/"}
+      icon={"bi:lightning-charge-fill"}
+      name={"Strike"}
+    />
+    <DonationLink
+      link={"https://www.youtube.com/"}
+      icon={"mdi:youtube"}
+      name={"YouTube"}
+    />
+  </div>
+</BaseLayout>
+
+<style>
+  h1 {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+  .donation-links {
+    padding-top: 2rem;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* grid-template-rows: repeat(1, 1fr); */
+    justify-items: flex-start;
+    align-items: center;
+    width: 100%;
+    border-top: solid 1px #27272a;
+    gap: 1rem;
+  }
+  p {
+    color: #71717a;
+  }
+  a {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 1.4rem;
+  }
+  @media only screen and (min-width: 768px) {
+    .donation-links {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      justify-items: center;
+    }
+    p {
+      font-size: 1.4rem;
+    }
+  }
+</style>
