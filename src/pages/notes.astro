@@ -1,6 +1,55 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Notes";
+import "websocket-polyfill";
+
+import {
+  relayInit,
+  generatePrivateKey,
+  getPublicKey,
+  getEventHash,
+  signEvent,
+} from "nostr-tools";
+
+import type { Relay, Event } from "nostr-tools";
+
+async function connect(id: string): Promise<Event | null> {
+  const relay = relayInit("wss://atlas.nostr.land");
+  await relay.connect();
+
+  relay.on("connect", () => {
+    console.log(`connected to ${relay!.url}`);
+  });
+
+  relay.on("error", () => {
+    console.log(`failed to connect to ${relay!.url}`);
+  });
+
+  return new Promise<Event | null>((resolve) => {
+    let sub = relay!.sub([
+      {
+        ids: [id],
+      },
+    ]);
+
+    sub.on("event", (event: Event) => {
+      console.log("we got the event we wanted:", event);
+      resolve(event);
+    });
+
+    sub.on("eose", () => {
+      sub.unsub();
+    });
+  });
+}
+
+const status = connect(
+  "npub1c6n5ghlme4vzandcd0z9drcur0pfwa8eg2x9qvpsw7vhgygvgxrs02ajly"
+);
+console.log(status);
+status.then((event) => {
+  console.log;
+});
 ---
 
 <BaseLayout>
