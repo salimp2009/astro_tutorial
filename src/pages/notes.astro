@@ -14,7 +14,7 @@ import {
 import type { Relay, Event } from "nostr-tools";
 
 async function connect(id: string): Promise<Event | null> {
-  const relay = relayInit("wss://atlas.nostr.land");
+  const relay = relayInit("wss://relay.nosbin.com");
   await relay.connect();
 
   relay.on("connect", () => {
@@ -44,7 +44,7 @@ async function connect(id: string): Promise<Event | null> {
 }
 
 const status = connect(
-  "npub1c6n5ghlme4vzandcd0z9drcur0pfwa8eg2x9qvpsw7vhgygvgxrs02ajly"
+  "c6a7445ffbcd582ecdb86bc4568f1c1bc29774f9428c503030779974110c4187"
 );
 console.log(status);
 status.then((event) => {
