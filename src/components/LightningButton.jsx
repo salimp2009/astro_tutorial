@@ -1,6 +1,6 @@
 // import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import { useEffect, useState } from "react";
-import { FaBeer } from "react-icons/fa";
+// import { FaBeer } from "react-icons/fa";
 import { BsLightningChargeFill } from "react-icons/bs";
 
 const LightningButton = () => {
