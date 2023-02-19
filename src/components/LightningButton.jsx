@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 // import { FaBeer } from "react-icons/fa";
 import { BsLightningChargeFill } from "react-icons/bs";
+import { Icon } from "astro-icon";
 
 const LightningButton = () => {
   const [connected, setConnected] = useState(false);

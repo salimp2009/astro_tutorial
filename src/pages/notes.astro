@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Notes";
 import "websocket-polyfill";
+import { nip19 } from "nostr-tools";
 
 import {
   relayInit,
@@ -12,11 +13,11 @@ import {
 } from "nostr-tools";
 
 import type { Relay, Event } from "nostr-tools";
-
+import { string } from "astro/zod";
 async function connect(id: string): Promise<Event | null> {
-  const relay = relayInit("wss://relay.nosbin.com");
+  const relay = relayInit("wss://nostr-pub.wellorder.net");
   await relay.connect();
-
+  // "wss://relay.nosbin.com"
   relay.on("connect", () => {
     console.log(`connected to ${relay!.url}`);
   });
@@ -44,14 +45,31 @@ async function connect(id: string): Promise<Event | null> {
 }
 
 const status = connect(
-  "c6a7445ffbcd582ecdb86bc4568f1c1bc29774f9428c503030779974110c4187"
+  "11e346f24e2314b57701149307483dd5ab75e5c12935afbda5acdaaa88508a12"
 );
+
+const status2 = connect(
+  "a96f7389af608e7f5c10f7f05653caaa30c56ca686ff3ec55a571571c2f46d31"
+);
+
+let event2: Event | null = null;
+
+const pubkey =
+  "66d46f2f276ce622021e88f9f3ae762c4ef314068640782b205764d23988f8c4";
+
+const pubKeytest = nip19.decode(
+  "npub1vm2x7te8dnnzyqs73rul8tnk9380x9qxseq8s2eq2ajdywvglrzq3q02jt"
+).data;
+
 console.log(status);
 status.then((event) => {
-  console.log;
+  // console.log;
+  event = event;
 });
 ---
 
 <BaseLayout>
   <h1>{pageTitle}</h1>
+  <p>pubkey: {pubkey}</p>
+  <p>pubkeyTest: {pubKeytest}</p>
 </BaseLayout>
