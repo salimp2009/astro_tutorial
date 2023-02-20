@@ -13,7 +13,7 @@ import {
 } from "nostr-tools";
 
 import type { Relay, Event } from "nostr-tools";
-import { string } from "astro/zod";
+
 async function connect(id: string): Promise<Event | null> {
   const relay = relayInit("wss://nostr-pub.wellorder.net");
   await relay.connect();
