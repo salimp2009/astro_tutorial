@@ -14,6 +14,8 @@ import {
 
 import type { Relay, Event } from "nostr-tools";
 
+// import { useNostrEvents } from "nostr-react";
+
 async function connect(id: string): Promise<Event | null> {
   const relay = relayInit("wss://nostr-pub.wellorder.net");
   await relay.connect();
@@ -72,4 +74,5 @@ status.then((event) => {
   <h1>{pageTitle}</h1>
   <p>pubkey: {pubkey}</p>
   <p>pubkeyTest: {pubKeytest}</p>
+  <!-- <ProfileFeed client:only="react" /> -->
 </BaseLayout>
