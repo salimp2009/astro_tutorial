@@ -16,9 +16,9 @@ document.querySelector(".send-button").addEventListener("click", async () => {
   const result = await webln.keysend({
     destination: pubKey,
     amount: value,
-    customRecords: {
-      696969: "z6jZV4xv9PuJoMGQvs2m",
-    },
+    // customRecords: {
+    //   696969: "pak_jpenhZcAAbwEItaKmSfV76vQpf9G4PR",
+    // },
   });
 
   document.getElementById("myPopup").style.display = "none";
