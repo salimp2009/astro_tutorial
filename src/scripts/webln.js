@@ -9,6 +9,9 @@ document.querySelector(".send-button").addEventListener("click", async () => {
 
   console.log("VALUE:", value);
 
+  // const pubKey =
+  //   "66d46f2f276ce622021e88f9f3ae762c4ef314068640782b205764d23988f8c4";
+
   const pubKey = nip19.decode(
     "npub1vm2x7te8dnnzyqs73rul8tnk9380x9qxseq8s2eq2ajdywvglrzq3q02jt"
   ).data;
@@ -17,6 +20,7 @@ document.querySelector(".send-button").addEventListener("click", async () => {
     destination: pubKey,
     amount: value,
     // customRecords: {
+    34349334: "Thank you. You are Awesome!",
     //   696969: "pak_jpenhZcAAbwEItaKmSfV76vQpf9G4PR",
     // },
   });

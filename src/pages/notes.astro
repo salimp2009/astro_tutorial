@@ -15,7 +15,6 @@ import {
 import type { Relay, Event } from "nostr-tools";
 
 // import { useNostrEvents } from "nostr-react";
-import LatestNotes from "../components/LatestNotes";
 
 async function connect(id: string): Promise<Event | null> {
   const relay = relayInit("wss://nostr-pub.wellorder.net");
