@@ -21,12 +21,18 @@ document.querySelector(".send-button").addEventListener("click", async () => {
   // ).data;
 
   const result = await webln.keysend({
+    // destination is the node address of your wallet in your
+    // Alby wallet or any other wallet you use
     destination:
-      "66d46f2f276ce622021e88f9f3ae762c4ef314068640782b205764d23988f8c4",
+      "030a58b8653d32b99200a2334cfe913e51dc7d155aa0116c176657a4f1722677a3",
     amount: value,
-    // customRecords: http://localhost:3000/posts/post-9{
-    // 34349334: "Thank you. You are Awesome!",
-    696969: "pak_jpenhZcAAbwEItaKmSfV76vQpf9G4PR",
+
+    // customRecords 696969 value is a value from your Alby wallet
+    // or any wallet that supports keysend
+    customRecords: {
+      // 34349334: "Thank you. You are Awesome!",
+      696969: "TErMimcd60wlXqcEzlOw",
+    },
   });
 
   document.getElementById("myPopup").style.display = "none";
