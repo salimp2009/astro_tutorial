@@ -2,17 +2,19 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Notes";
 import "websocket-polyfill";
-import { nip19 } from "nostr-tools";
+// import { nip19 } from "nostr-tools";
+import nostr from "nostr-tools";
+const { relayInit, nip19 } = nostr;
 
-import {
-  relayInit,
-  // generatePrivateKey,
-  // getPublicKey,
-  // getEventHash,
-  // signEvent,
-} from "nostr-tools";
+// import {
+//   relayInit,
+//   // generatePrivateKey,
+//   // getPublicKey,
+//   // getEventHash,
+//   // signEvent,
+// } from "nostr-tools";
 
-import type { Relay, Event } from "nostr-tools";
+// import type { Relay, Event } from "nostr-tools";
 
 // import { useNostrEvents } from "nostr-react";
 
