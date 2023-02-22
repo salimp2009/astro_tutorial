@@ -25,9 +25,8 @@ document.querySelector(".send-button").addEventListener("click", async () => {
       "66d46f2f276ce622021e88f9f3ae762c4ef314068640782b205764d23988f8c4",
     amount: value,
     // customRecords: http://localhost:3000/posts/post-9{
-    34349334: "Thank you. You are Awesome!",
-    //   696969: "pak_jpenhZcAAbwEItaKmSfV76vQpf9G4PR",
-    // },
+    // 34349334: "Thank you. You are Awesome!",
+    696969: "pak_jpenhZcAAbwEItaKmSfV76vQpf9G4PR",
   });
 
   document.getElementById("myPopup").style.display = "none";
